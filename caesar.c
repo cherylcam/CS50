@@ -8,12 +8,14 @@ int main(int argc, string argv [])  //use this main to have a command line argum
     if (argc != 2) //allow for 2 arguments only
     {
         printf("Please try with one single command line!\n");
+        return 1;
     }
 
     int k = atoi(argv[1]); //convert the 'key' to an int since it starts as a string
     if (k < 0)  //allow only non-negative integers
     {
         printf("Please use a positive integer!\n");
+        return 1;
     }
     else
     {
@@ -37,4 +39,5 @@ int main(int argc, string argv [])  //use this main to have a command line argum
         }
     }
     printf("\n"); //print a new line
+    return 0;
 }
