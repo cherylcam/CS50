@@ -32,7 +32,7 @@ int main(void)
         coins++;
     }
 
-    while (cents >= 1 ) //number of 1 cent coin
+    while (cents >= 1) //number of 1 cent coin
     {
         cents = cents - 1;
         coins++;
