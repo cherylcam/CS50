@@ -21,9 +21,13 @@ int main(void)
             {
                 //print the spaces and hashes for every row & column using if_else statement
                 if (column + row < height - 1)
-                printf(" ");
+                {
+                    printf(" ");
+                }
                 else
-                printf("#");
+                {
+                    printf("#");
+                }
             }
         }
         //print a new line
