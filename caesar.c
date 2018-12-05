@@ -20,7 +20,7 @@ int main(int argc, string argv [])  //use this main to have a command line argum
     else
     {
         string p = get_string("plaintext: "); //prompt user for a plaintext that they want to encrypt
-        printf("Cyphertext: ");
+        printf("ciphertext: ");
         //use the below loop to encrypt the plaintext for every character
         for (int i = 0, n = strlen(p); i < n; i++)
         {
