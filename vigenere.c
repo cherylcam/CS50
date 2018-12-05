@@ -21,39 +21,39 @@ int main(int argc, string argv [])  //use this main to have a command line argum
         }
 
     }
-        string p = get_string("plaintext: "); //prompt user for a plaintext that they want to encrypt
-        printf("ciphertext: ");
+    string p = get_string("plaintext: "); //prompt user for a plaintext that they want to encrypt
+    printf("ciphertext: ");
 
-        //use the below loop to encrypt the plaintext for every character
-        int j = 0;
-        for (int i = 0, n = strlen(p); i < n; i++)
+    //use the below loop to encrypt the plaintext for every character
+    int j = 0;
+    for (int i = 0, n = strlen(p); i < n; i++)
+    {
+        j = j % strlen(k);
+        if (isalpha(p[i]))
         {
-            j = j % strlen(k);
-            if (isalpha (p[i]))
+            if (islower(p[i]) && islower(k[j]))
             {
-                if (islower(p[i]) && islower(k[j]))
-                {
                 printf("%c", (((p[i] - 97) + (k[j] - 97)) % 26) + 97);
-                }
-            else if (islower(p[i]) && isupper(k[j]))
-                {
-                printf("%c", (((p[i] - 97) + (k[j] - 65)) % 26) + 97);
-                }
-            else if (isupper(p[i]) && islower(k[j]))
-                {
-                printf("%c", (((p[i] - 65) + (k[j] - 97)) % 26) + 65);
-                }
-            else if (isupper(p[i]) && isupper(k[j]))
-                {
-                printf("%c", (((p[i] - 65) + (k[j] - 65)) % 26) + 65);
-                }
-             j++;
             }
-            else //if neither then just print whatever is on the plaintext
-                {
-                    printf("%c", p[i]);
-                }
+            else if (islower(p[i]) && isupper(k[j]))
+            {
+                printf("%c", (((p[i] - 97) + (k[j] - 65)) % 26) + 97);
+            }
+            else if (isupper(p[i]) && islower(k[j]))
+            {
+                printf("%c", (((p[i] - 65) + (k[j] - 97)) % 26) + 65);
+            }
+            else if (isupper(p[i]) && isupper(k[j]))
+            {
+                printf("%c", (((p[i] - 65) + (k[j] - 65)) % 26) + 65);
+            }
+            j++;
         }
+        else //if neither then just print whatever is on the plaintext
+        {
+            printf("%c", p[i]);
+        }
+    }
     printf("\n"); //print a new line
     return 0;
 }
