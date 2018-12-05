@@ -26,7 +26,7 @@ int main(int argc, string argv [])  //use this main to have a command line argum
 
     //use the below loop to encrypt the plaintext for every character
     int j = 0;
-    for (int i = 0, n = strlen(p); i < n; i++)
+    for (int i = 0; i < strlen(p); i++)
     {
         j = j % strlen(k);
         if (isalpha(p[i]))
